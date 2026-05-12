@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Dr. Heart! 💖</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#e63565;--deep:#b01a45;--pink:#ff85a1;--cream:#fff5f8;--dark:#2a0a15;--gold:#f7c948}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+.hero{min-height:100vh;background:linear-gradient(135deg,#fff0f5,#ffe0ea,#ffd1dc);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px;position:relative;overflow:hidden}
+.fh{position:absolute;pointer-events:none;animation:fup linear infinite;opacity:0}
+@keyframes fup{0%{transform:translateY(110vh) rotate(0deg);opacity:0}10%{opacity:.15}90%{opacity:.15}100%{transform:translateY(-10vh) rotate(360deg);opacity:0}}
+.bigheart{font-size:clamp(80px,15vw,130px);animation:hb .85s ease-in-out infinite;display:inline-block;filter:drop-shadow(0 0 30px rgba(230,53,101,.5));cursor:pointer;position:relative;z-index:1}
+@keyframes hb{0%,100%{transform:scale(1)}14%{transform:scale(1.13)}28%{transform:scale(1)}42%{transform:scale(1.09)}56%{transform:scale(1)}}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,6vw,4rem);color:var(--deep);line-height:1.15;margin:16px 0 8px;position:relative;z-index:1}
+.hero h1 span{color:var(--red);font-style:italic}
+.sub{font-size:clamp(1rem,2.5vw,1.3rem);color:#b05070;font-weight:600;margin-bottom:24px;position:relative;z-index:1}
+.badge{background:var(--red);color:#fff;border-radius:50px;padding:10px 24px;font-weight:800;font-size:.95rem;letter-spacing:1px;box-shadow:0 4px 20px rgba(230,53,101,.4);animation:pi .6s cubic-bezier(.36,1.56,.64,1) .3s both;position:relative;z-index:1;margin-bottom:8px}
+@keyframes pi{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+.sdown{position:absolute;bottom:30px;font-size:.85rem;color:#c06080;animation:bv 1.5s ease-in-out infinite;z-index:1}
+@keyframes bv{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+.section{padding:80px 20px;max-width:900px;margin:0 auto}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--deep);text-align:center;margin-bottom:50px}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.wcard{background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 4px 24px rgba(230,53,101,.1);border:2px solid transparent;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.wcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--gold))}
+.wcard:hover{transform:translateY(-6px);border-color:var(--pink);box-shadow:0 12px 40px rgba(230,53,101,.18)}
+.wi{font-size:2.2rem;margin-bottom:12px;display:block}
+.wt{font-weight:800;color:var(--red);margin-bottom:8px;font-size:1rem}
+.wbody{font-size:.92rem;line-height:1.65;color:#5a2030}
+.wtease{margin-top:12px;font-size:.82rem;color:#b05070;font-style:italic;border-top:1px dashed #ffb3c6;padding-top:10px}
+
+.gsec{background:linear-gradient(135deg,#2a0a15,#4a0a25);padding:80px 20px;position:relative;overflow:hidden}
+.gsec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(230,53,101,.15),transparent 70%)}
+.gsec .stitle{color:#ffb3c6}
+.gdesc{text-align:center;color:#e08090;margin:0 auto 28px;font-size:1rem;max-width:560px}
+#gwrap{max-width:560px;margin:0 auto;position:relative;z-index:1}
+#hud{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.sbox{background:rgba(255,255,255,.08);border:1px solid rgba(255,179,198,.3);border-radius:12px;padding:10px 18px;text-align:center;color:#fff}
+.slbl{font-size:.7rem;color:#ffb3c6;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.sval{font-size:1.5rem;font-weight:800}
+.hpw{background:rgba(255,255,255,.08);border:1px solid rgba(255,179,198,.3);border-radius:12px;padding:10px 18px;flex:1;margin:0 12px}
+.hptr{height:14px;background:rgba(255,255,255,.1);border-radius:7px;overflow:hidden;margin-top:6px}
+#hpb{height:100%;border-radius:7px;background:linear-gradient(90deg,#e63565,#ff85a1);transition:width .25s,background .4s}
+#gc{width:100%;border-radius:20px;border:2px solid rgba(230,53,101,.4);display:block;cursor:crosshair;touch-action:none;background:#0a0208}
+#gmsg{text-align:center;color:#ffb3c6;font-size:.9rem;margin-top:12px;min-height:22px;font-weight:600}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--red),var(--deep));color:#fff;border:none;border-radius:50px;padding:14px 36px;font-size:1rem;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;margin-top:18px;box-shadow:0 4px 20px rgba(230,53,101,.5);transition:transform .2s,box-shadow .2s;letter-spacing:.5px}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(230,53,101,.6)}
+.btn:active{transform:scale(.96)}
+#ovp{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;padding:30px;background:rgba(20,5,10,.95);border:2px solid rgba(255,179,198,.4);border-radius:20px;color:#fff;box-shadow:0 10px 40px rgba(0,0,0,.6);z-index:10;width:80%}
+#ovp h2{font-family:'Playfair Display',serif;font-size:2.2rem;color:#ffb3c6}
+#ovp p{margin-top:10px;color:#e08090;font-size:1.1rem}
+
+.ecgw{background:#0f0f0f;padding:30px 20px}
+.ecgs{background:#0a0a0a;border-radius:16px;padding:20px;margin:0 auto;max-width:700px;text-align:center;border:1px solid #2a2a2a}
+.ecgs svg{width:100%;height:70px}
+
+.final{text-align:center;padding:80px 20px;background:linear-gradient(135deg,#fff0f5,#ffd1dc)}
+.final h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);color:var(--deep);margin-bottom:20px}
+.final p{max-width:580px;margin:0 auto 16px;color:#7a2040;font-size:1.05rem;line-height:1.7}
+.cbtn{background:linear-gradient(135deg,var(--gold),#f09820);color:var(--dark);border:none;border-radius:50px;padding:16px 40px;font-size:1.1rem;font-weight:800;font-family:'Nunito',sans-serif;cursor:pointer;box-shadow:0 4px 20px rgba(247,201,72,.4);transition:transform .2s;margin-top:20px}
+.cbtn:hover{transform:translateY(-3px) scale(1.03)}
+.cp{position:fixed;pointer-events:none;animation:cf 3s ease-in forwards;z-index:9999}
+@keyframes cf{0%{opacity:1;transform:translateY(-20px) rotate(0deg)}100%{opacity:0;transform:translateY(100vh) rotate(720deg)}}
+@media(max-width:500px){.sbox{padding:8px 10px}.sval{font-size:1.2rem}}
+</style>
+</head>
+<body>
+
+<section class="hero" id="hero">
+  <div class="badge">🎂 MAY 13TH IS YOUR SPECIAL DAY!</div>
+  <div class="bigheart" id="bh">❤️</div>
+  <h1>Happy Birthday,<br><span>Future Dr. Heartbreaker!</span></h1>
+  <p class="sub">Cardiologist. Queen. Certified Heart Expert (of other people's hearts, apparently not yours 😏)</p>
+  <div class="sdown">↓ scroll for surprises ↓</div>
+</section>
+
+<section class="section">
+  <h2 class="stitle">💌 Wishes From Your Bestie</h2>
+  <div class="wgrid">
+    <div class="wcard"><span class="wi">🩺</span><div class="wt">To the Future Cardiologist</div><p class="wbody">May you heal a thousand hearts… and finally figure out why yours always picks the wrong people. Science has limits, bestie. 😂</p><p class="wtease">P.S. Cardiology textbooks don't have a chapter on common sense. Just saying.</p></div>
+    <div class="wcard"><span class="wi">🎂</span><div class="wt">Happy Birthday!</div><p class="wbody">Another year older, another year closer to writing prescriptions people can't read. Some things never change — like your handwriting. 😅</p><p class="wtease">Doctor handwriting is clearly inherited at med school orientation.</p></div>
+    <div class="wcard"><span class="wi">❤️‍🩹</span><div class="wt">Heart Specialist?</div><p class="wbody">You'll spend your whole career fixing hearts — yet you broke mine EVERY time you cancelled our plans. Rude. Highly unprofessional. 😤</p><p class="wtease">I'm filing a complaint to the medical board. The charge? Friendship malpractice.</p></div>
+    <div class="wcard"><span class="wi">🌟</span><div class="wt">Seriously Though…</div><p class="wbody">You are one of the most hardworking, brilliant, and caring humans I know. Cardiology has NO IDEA what's about to hit it. You're going to be legendary. ✨</p><p class="wtease">…but you still owe me that lunch from three months ago. Legends pay their debts.</p></div>
+    <div class="wcard"><span class="wi">🏥</span><div class="wt">Hospital Life Awaits</div><p class="wbody">You'll wear a stethoscope and look incredibly cool. You'll save lives. Meanwhile I'll proudly say "I knew her before she was famous." 🥹</p><p class="wtease">Please remember me when you're rich and famous. I accept gifts in cash or cake.</p></div>
+    <div class="wcard"><span class="wi">🫀</span><div class="wt">From One Heart to Another</div><p class="wbody">You have the biggest heart of anyone I've met. Don't let med school shrink it. Stay warm, stay kind, stay YOU. 💖</p><p class="wtease">You can quote me in your Nobel Prize acceptance speech someday.</p></div>
+  </div>
+</section>
+
+<section class="gsec">
+  <div style="max-width:900px;margin:0 auto;position:relative;z-index:1">
+    <h2 class="stitle">🫀 The Heart Rescue Game</h2>
+    <p class="gdesc">Blood clots are attacking! Click them before they reach the heart. Build combos for massive points. How long can you protect it?</p>
+    <div id="gwrap">
+      <div id="hud">
+        <div class="sbox"><div class="slbl">Score</div><div class="sval" id="sel">0</div></div>
+        <div class="hpw"><div class="slbl">Heart Health</div><div class="hptr"><div id="hpb" style="width: 100%"></div></div></div>
+        <div class="sbox"><div class="slbl">Level</div><div class="sval" id="lel">1</div></div>
+      </div>
+      <div style="position: relative;">
+        <canvas id="gc" width="540" height="380"></canvas>
+        <div id="ovp">
+          <h2 id="ovt">Game Over!</h2><p id="ovm"></p>
+          <button class="btn" id="retryBtn" style="margin-top:16px">🔁 Try Again</button>
+        </div>
+      </div>
+      <p id="gmsg">Click ▶ Start to play!</p>
+      <div style="text-align:center"><button class="btn" id="startBtn">▶ Start Game</button></div>
+    </div>
+  </div>
+</section>
+
+<div class="ecgw">
+  <div class="ecgs">
+    <svg viewBox="0 0 700 70" preserveAspectRatio="none">
+      <polyline points="0,35 60,35 80,35 90,10 100,60 110,15 120,35 200,35 220,35 230,10 240,60 250,15 260,35 340,35 360,35 370,10 380,60 390,15 400,35 480,35 500,35 510,10 520,60 530,15 540,35 620,35 640,35 650,10 660,60 670,15 680,35 700,35"
+        fill="none" stroke="#e63565" stroke-width="2" stroke-linejoin="round">
+        <animate attributeName="stroke-dasharray" from="0,2000" to="2000,0" dur="3s" repeatCount="indefinite"/>
+      </polyline>
+    </svg>
+    <p style="color:#555;font-size:.8rem;margin-top:8px">♥ Sinus Rhythm — Perfectly Healthy — Just Like Our Friendship ♥</p>
+  </div>
+</div>
+
+<section class="final">
+  <h2>Here's to You, 🫀 Queen 🫀</h2>
+  <p>You chose the hardest path because you have the biggest heart. Cardiology chose you because you were born to heal. And I chose you as my friend because... honestly? You're stuck with me now.</p>
+  <p>May this birthday be extraordinary — full of joy, good food, zero exams, and at least one moment where you genuinely forget what an ECG looks like.</p>
+  <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--red);font-weight:700">Happy Birthday! 🎂💖🎉</p>
+  <button class="cbtn" onclick="launchConfetti()">🎉 Celebrate with Confetti!</button>
+</section>
+
+<script>
+// ── Floating hearts ──
+(function(){
+  var hero=document.getElementById('hero');
+  var em=['❤️','🫀','💕','💗','💓','💖','💝'];
+  for(var i=0;i<18;i++){
+    var d=document.createElement('div');
+    d.className='fh';
+    d.textContent=em[i%em.length];
+    d.style.left=Math.random()*100+'%';
+    d.style.fontSize=(1+Math.random()*1.5)+'rem';
+    d.style.animationDuration=(8+Math.random()*12)+'s';
+    d.style.animationDelay=(-Math.random()*15)+'s';
+    hero.appendChild(d);
+  }
+})();
+
+document.getElementById('bh').onclick=function(){
+  this.style.transform='scale(1.35)';
+  var self=this; setTimeout(function(){self.style.transform='';},180);
+};
+
+function launchConfetti(){
+  var cols=['#e63565','#f7c948','#ff85a1','#4ecdc4','#45b7d1','#96e6a1'];
+  for(var i=0;i<120;i++)(function(i){
+    setTimeout(function(){
+      var c=document.createElement('div');
+      c.className='cp';
+      c.style.left=Math.random()*100+'vw';
+      c.style.top='-10px';
+      c.style.width=(6+Math.random()*10)+'px';
+      c.style.height=(6+Math.random()*10)+'px';
+      c.style.background=cols[Math.floor(Math.random()*cols.length)];
+      c.style.borderRadius=Math.random()>.5?'50%':'2px';
+      c.style.animationDuration=(2+Math.random()*2)+'s';
+      document.body.appendChild(c);
+      setTimeout(function(){c.remove();},4000);
+    },i*22);
+  })(i);
+}
+
+// ══════════════════════════════════
+//  UPGRADED HEART RESCUE GAME ENGINE
+// ══════════════════════════════════
+(function(){
+  var canvas=document.getElementById('gc');
+  var ctx=canvas.getContext('2d');
+  var W=canvas.width, H=canvas.height;
+  var HX=W/2, HY=H/2+10;
+
+  var STATE, score, hp, level, frame;
+  var combo, comboTimer;
+  var clots, parts, popups;
+  var shakeMag;
+  var raf=null;
+  var audioCtx=null;
+
+  function reset(){
+    STATE='idle'; score=0; hp=100; level=1; frame=0;
+    combo=0; comboTimer=0;
+    clots=[]; parts=[]; popups=[]; 
+    shakeMag=0;
+    document.getElementById('sel').innerText = '0';
+    document.getElementById('lel').innerText = '1';
+    document.getElementById('ovp').style.display = 'none';
+    setHP();
+  }
+  reset();
+
+  // ── Audio Engine ──
+  function tone(freq,type,dur,vol){
+    try{
+      if(!audioCtx) audioCtx=new(window.AudioContext||window.webkitAudioContext)();
+      var o=audioCtx.createOscillator(), g=audioCtx.createGain();
+      o.connect(g); g.connect(audioCtx.destination);
+      o.type=type; o.frequency.value=freq;
+      g.gain.setValueAtTime(vol,audioCtx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001,audioCtx.currentTime+dur);
+      o.start(); o.stop(audioCtx.currentTime+dur+0.05);
+    }catch(e){}
+  }
+  function sKill(){ tone(520,'triangle',.1,.35); setTimeout(function(){tone(720,'sine',.08,.2);},55); }
+  function sHurt(){ tone(110,'sawtooth',.22,.5); }
+  function sLevel(){ [380,500,640,800].forEach(function(f,i){ setTimeout(function(){tone(f,'sine',.15,.32);},i*65); }); }
+
+  // ── Vectors & Shapes ──
+  function makeHeartPath(x,y,s){
+    ctx.beginPath();
+    ctx.moveTo(x,y+s*.3);
+    ctx.bezierCurveTo(x,y, x-s*.5,y, x-s*.5,y+s*.3);
+    ctx.bezierCurveTo(x-s*.5,y+s*.65, x,y+s*.9, x, y+s*1.1);
+    ctx.bezierCurveTo(x,y+s*.9, x+s*.5,y+s*.65, x+s*.5,y+s*.3);
+    ctx.bezierCurveTo(x+s*.5,y, x,y, x, y+s*.3);
+  }
+  function drawHeart(x,y,s,col,glow){
+    ctx.save();
+    if(glow){ ctx.shadowColor=col; ctx.shadowBlur=glow; }
+    ctx.fillStyle=col;
+    makeHeartPath(x,y-s*.55,s);
+    ctx.fill();
+    ctx.restore();
+  }
+  function hSize(){ return Math.max(5, 40+Math.sin(frame*.09)*5); }
+
+  function spawnClot(){
+    var edge=Math.floor(Math.random()*4);
+    var x,y;
+    if(edge===0){x=Math.random()*W;y=-22;}
+    else if(edge===1){x=W+22;y=Math.random()*H;}
+    else if(edge===2){x=Math.random()*W;y=H+22;}
+    else{x=-22;y=Math.random()*H;}
+    
+    var fast = level > 2 && Math.random() < 0.3;
+    var boss = level > 4 && Math.random() < 0.1;
+    
+    clots.push({
+      x:x, y:y,
+      speed: (boss ? 0.4 : fast ? 1.8 : 0.8) + (level * 0.15),
+      r: boss ? 20 : fast ? 8 : 12,
+      hp: boss ? 3 : 1,
+      type: boss ? 'boss' : fast ? 'fast' : 'norm'
+    });
+  }
+
+  // ── FX ──
+  function burst(x,y,col,count){
+    for(var i=0;i<count;i++){
+      var a=Math.random()*Math.PI*2, sp=1+Math.random()*4;
+      parts.push({ x:x, y:y, vx:Math.cos(a)*sp, vy:Math.sin(a)*sp, life:1, decay:0.03, col:col, r:2+Math.random()*4 });
+    }
+  }
+
+  // ── Core Systems ──
+  function setHP(){
+    var el=document.getElementById('hpb');
+    el.style.width=Math.max(0, hp)+'%';
+    el.style.background=hp>60?'linear-gradient(90deg,#e63565,#ff85a1)':hp>30?'linear-gradient(90deg,#ff6030,#ffb060)':'linear-gradient(90deg,#ff1010,#ff5030)';
+  }
+  function setMsg(t){ document.getElementById('gmsg').textContent=t; }
+
+  function drawIdle(){
+    var g=ctx.createRadialGradient(W/2,H/2,10,W/2,H/2,W*.7);
+    g.addColorStop(0,'#1e0410'); g.addColorStop(1,'#080108');
+    ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+    // Draw Grid
+    ctx.strokeStyle='rgba(230,53,101,.07)'; ctx.lineWidth=1;
+    for(let i=0; i<W; i+=30) { ctx.beginPath(); ctx.moveTo(i,0); ctx.lineTo(i,H); ctx.stroke(); }
+    for(let i=0; i<H; i+=30) { ctx.beginPath(); ctx.moveTo(0,i); ctx.lineTo(W,i); ctx.stroke(); }
+  }
+
+  // ── Main Loop ──
+  function loop() {
+    if(STATE !== 'playing') return;
+    frame++;
+    
+    ctx.save();
+    if(shakeMag > 0) {
+        ctx.translate((Math.random()-.5)*shakeMag, (Math.random()-.5)*shakeMag);
+        shakeMag -= 0.5;
+    }
+
+    drawIdle();
+    
+    // Spawner
+    let spawnRate = Math.max(15, 70 - (level * 8));
+    if(frame % spawnRate === 0) spawnClot();
+
+    // Combo logic
+    if(comboTimer > 0) {
+        comboTimer--;
+        if(comboTimer <= 0) combo = 0;
+    }
+
+    // Entities - Clots
+    for(let i=clots.length-1; i>=0; i--) {
+        let c = clots[i];
+        let dx = HX - c.x, dy = HY - c.y;
+        let dist = Math.sqrt(dx*dx + dy*dy);
+        
+        if(dist < hSize() + c.r) {
+            hp -= (c.type === 'boss' ? 25 : c.type === 'fast' ? 15 : 10);
+            shakeMag = 8;
+            sHurt();
+            burst(HX, HY, '#ff0000', 15);
+            clots.splice(i, 1);
+            setHP();
+            if(hp <= 0) gameOver();
+            continue;
+        }
+        
+        c.x += (dx/dist) * c.speed;
+        c.y += (dy/dist) * c.speed;
+        
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, c.r, 0, Math.PI*2);
+        ctx.fillStyle = c.type==='boss' ? '#800080' : c.type==='fast' ? '#ffeb3b' : '#cc0000';
+        ctx.fill();
+        ctx.strokeStyle = '#fff';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+    }
+
+    // Particles
+    for(let i=parts.length-1; i>=0; i--) {
+        let p = parts[i];
+        p.x += p.vx; p.y += p.vy;
+        p.life -= p.decay;
+        if(p.life <= 0) { parts.splice(i,1); continue; }
+        ctx.globalAlpha = p.life;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+        ctx.fillStyle = p.col; ctx.fill();
+        ctx.globalAlpha = 1;
+    }
+
+    // Popups
+    for(let i=popups.length-1; i>=0; i--) {
+        let p = popups[i];
+        p.y -= 1; p.life -= 0.02;
+        if(p.life <= 0) { popups.splice(i,1); continue; }
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle = p.col;
+        ctx.font = "bold 16px Nunito";
+        ctx.fillText(p.txt, p.x, p.y);
+        ctx.globalAlpha = 1;
+    }
+
+    // Draw Target Heart
+    let hcol = hp > 50 ? '#e63565' : hp > 20 ? '#ff5555' : '#aa0000';
+    drawHeart(HX, HY, hSize(), hcol, hp > 20 ? 15 : 0);
+
+    ctx.restore();
+
+    // Level progression
+    if(score >= level * 150) {
+        level++;
+        document.getElementById('lel').innerText = level;
+        sLevel();
+        popups.push({x: W/2 - 40, y: H/2 - 40, txt: "LEVEL UP!", col: "#f7c948", life: 1});
+        if(level === 4) {
+             launchConfetti(); // Easter egg trigger
+             setMsg("🔥 GOD MODE UNLOCKED!");
+        }
+    }
+
+    if(STATE === 'playing') raf = requestAnimationFrame(loop);
+  }
+
+  function gameOver() {
+    STATE = 'gameover';
+    cancelAnimationFrame(raf);
+    document.getElementById('ovp').style.display = 'block';
+    document.getElementById('ovm').innerHTML = `Final Score: <b>${score}</b> <br>Level Reached: <b>${level}</b>`;
+  }
+
+  // ── Input ──
+  canvas.addEventListener('pointerdown', function(e) {
+    if(STATE !== 'playing') return;
+    let rect = canvas.getBoundingClientRect();
+    // Calculate scale ratio in case CSS resizes the canvas
+    let scaleX = canvas.width / rect.width;
+    let scaleY = canvas.height / rect.height;
+    let mx = (e.clientX - rect.left) * scaleX;
+    let my = (e.clientY - rect.top) * scaleY;
+    
+    let hit = false;
+    for(let i=clots.length-1; i>=0; i--) {
+        let c = clots[i];
+        let dist = Math.sqrt((c.x-mx)**2 + (c.y-my)**2);
+        if(dist < c.r + 20) { // 20px padding for mobile thumbs
+            hit = true;
+            c.hp--;
+            burst(c.x, c.y, '#fff', 5);
+            
+            if(c.hp <= 0) {
+                clots.splice(i, 1);
+                combo++;
+                comboTimer = 90; // generous combo window
+                let pts = (c.type==='boss' ? 50 : c.type==='fast' ? 20 : 10) * (1 + (combo*0.1));
+                pts = Math.floor(pts);
+                score += pts;
+                
+                document.getElementById('sel').innerText = score;
+                burst(c.x, c.y, c.type==='boss' ? '#800080' : '#ffeb3b', 12);
+                sKill();
+                popups.push({x: c.x, y: c.y, txt: "+"+pts, col: combo > 3 ? '#f7c948' : '#fff', life: 1});
+                
+                if(combo > 2) setMsg(`🔥 ${combo}x COMBO!`);
+            }
+            break;
+        }
+    }
+    if(!hit) combo = 0;
+  });
+
+  document.getElementById('startBtn').addEventListener('click', function(){
+    if(audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+    this.style.display = 'none';
+    reset();
+    STATE = 'playing';
+    setMsg("Protect the heart!");
+    loop();
+  });
+
+  document.getElementById('retryBtn').addEventListener('click', function(){
+    reset();
+    STATE = 'playing';
+    setMsg("Protect the heart!");
+    loop();
+  });
+
+  // Initial draw
+  drawIdle();
+  drawHeart(HX, HY, 40, '#e63565', 15);
+
+})();
+</script>
+</body>
+</html>
